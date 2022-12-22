@@ -80,6 +80,7 @@ echo $?
             steps {
                 sh '''
                 ls 
+		ls
                 '''
             }
         }
