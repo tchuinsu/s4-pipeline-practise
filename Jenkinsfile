@@ -71,7 +71,7 @@ stage('permission') {
                 sh '''
 cat permission.txt | grep -o $USER
 echo $?
-'''
+                '''
             }
         }
 	    
@@ -225,7 +225,10 @@ docker push devopseasylearning2021/s4-weather:${BUILD_NUMBER}$WEATHERTag
         }
 
         stage('update helm charts-dev') {
-
+          when{ 
+          expression {
+            env.Environment == 'DEV' }
+            }
 	      steps {
 	        script {
 	          withCredentials([
@@ -256,7 +259,7 @@ cat <<EOF > dev-values.yaml
 EOF
               git add -A
               git commit -m "testing jenkins"
-              git push https://devopseasylearning:$TOKEN@github.com/tchuinsu/s4-pipeline-practise.git
+              git push https://devopseasylearning:$TOKEN@github.com/tchuinsu/s4-pipeline-practise.git || true
 	            '''
 	          }
 
@@ -267,7 +270,10 @@ EOF
 	    }
 
         stage('update helm charts-sanbox') {
-
+         when{ 
+          expression {
+            env.Environment == 'SANBOX' }
+            }
 	      steps {
 	        script {
 	          withCredentials([
@@ -298,7 +304,7 @@ cat <<EOF > sanbox-values.yaml
 EOF
               git add -A
               git commit -m "testing jenkins"
-              git push https://devopseasylearning:$TOKEN@github.com/tchuinsu/s4-pipeline-practise.git
+              git push https://devopseasylearning:$TOKEN@github.com/tchuinsu/s4-pipeline-practise.git || true
 	            '''
 	          }
 
@@ -309,7 +315,10 @@ EOF
 	    }
 
         stage('update helm charts-prod') {
-
+         when{ 
+          expression {
+            env.Environment == 'PROD' }
+            }
 	      steps {
 	        script {
 	          withCredentials([
@@ -340,7 +349,7 @@ cat <<EOF > prod-values.yaml
 EOF
               git add -A
               git commit -m "testing jenkins"
-              git push https://devopseasylearning:$TOKEN@github.com/tchuinsu/s4-pipeline-practise.git
+              git push https://devopseasylearning:$TOKEN@github.com/tchuinsu/s4-pipeline-practise.git || true
 	            '''
 	          }
 
