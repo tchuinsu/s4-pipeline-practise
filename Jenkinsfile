@@ -180,7 +180,7 @@ echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u devopseasylearning2021 --passw
         }
 
         stage('push-to-dockerhub-dev') {
-          if{ 
+          when{ 
               expression {
                 env.Environment == 'DEV' }
                 }
