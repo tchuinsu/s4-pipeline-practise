@@ -362,7 +362,8 @@ EOF
         stage('wait for argocd') {
             steps {
                 sh '''
-                ls 
+                ls
+		ls
                 pwd
                 '''
             }
