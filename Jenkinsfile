@@ -127,7 +127,7 @@ cd -
         stage('build-sanbox') {
           when{ 
               expression {
-                env.Environment == 'SANBOX' }
+                env.Environment == 'Sanbox' }
                 }
             steps {
                 sh '''
@@ -151,7 +151,7 @@ cd -
         stage('build-prod') {
           when{ 
               expression {
-                env.Environment == 'PROD' }
+                env.Environment == 'Prod' }
                 }
             steps {
                 sh '''
@@ -197,7 +197,7 @@ docker push devopseasylearning2021/s4-weather:${BUILD_NUMBER}$WEATHERTag
         stage('push-to-dockerhub-sanbox') {
           when{ 
               expression {
-                env.Environment == 'SANBOX' }
+                env.Environment == 'Sanbox' }
                 }
             steps {
                 sh '''
@@ -212,7 +212,7 @@ docker push devopseasylearning2021/s4-weather:${BUILD_NUMBER}$WEATHERTag
         stage('push-to-dockerhub-prod') {
           when{ 
               expression {
-                env.Environment == 'PROD' }
+                env.Environment == 'Prod' }
                 }
             steps {
                 sh '''
@@ -272,7 +272,7 @@ EOF
     stage('update helm charts-sanbox') {
          when{ 
           expression {
-            env.Environment == 'SANBOX' }
+            env.Environment == 'Sanbox' }
             }
 	      steps {
 	        script {
@@ -318,7 +318,7 @@ EOF
     stage('update helm charts-prod') {
          when{ 
           expression {
-            env.Environment == 'PROD' }
+            env.Environment == 'Prod' }
             }
 	      steps {
 	        script {
