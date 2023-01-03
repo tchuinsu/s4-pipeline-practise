@@ -232,7 +232,7 @@ docker push devopseasylearning2021/s4-weather:${BUILD_NUMBER}$WEATHERTag
 	      steps {
 	        script {
 	          withCredentials([
-	            string(credentialsId: 'coubis-Gitlab-credentials', variable: 'TOKEN')
+	            string(credentialsId: 'coubis-image', variable: 'TOKEN')
 	          ]) {
 
 	            sh '''
@@ -277,7 +277,7 @@ EOF
 	      steps {
 	        script {
 	          withCredentials([
-	            string(credentialsId: 'coubis-Gitlab-credentials', variable: 'TOKEN')
+	            string(credentialsId: 'ccoubis-image', variable: 'TOKEN')
 	          ]) {
 
 	            sh '''
@@ -323,7 +323,7 @@ EOF
 	      steps {
 	        script {
 	          withCredentials([
-	            string(credentialsId: 'coubis-Gitlab-credentials', variable: 'TOKEN')
+	            string(credentialsId: 'coubis-image', variable: 'TOKEN')
 	          ]) {
 
 	            sh '''
