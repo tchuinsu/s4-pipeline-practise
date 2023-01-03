@@ -281,8 +281,8 @@ EOF
 	          ]) {
 
 	            sh '''
-                 git config --global user.name "tchuinsu"
-                 git config --global user.email coubis001@gmail.com
+                git config --global user.name "tchuinsu"
+                git config --global user.email coubis001@gmail.com
                 rm -rf s4-pipeline-practise || true
                 git clone  https://tchuinsu:$TOKEN@github.com/tchuinsu/s4-pipeline-practise.git
                 cd s4-pipeline-practise/CHARTS
@@ -327,8 +327,8 @@ EOF
 	          ]) {
 
 	            sh '''
-                 git config --global user.name "tchuinsu"
-                 git config --global user.email coubis001@gmail.com
+                git config --global user.name "tchuinsu"
+                git config --global user.email coubis001@gmail.com
                 rm -rf s4-pipeline-practise || true
                 git clone  https://tchuinsu:$TOKEN@github.com/tchuinsu/s4-pipeline-practise.git
                 cd s4-pipeline-practise/CHARTS
