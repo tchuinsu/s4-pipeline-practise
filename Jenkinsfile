@@ -303,7 +303,7 @@ cat <<EOF > sanbox-values.yaml
 EOF
                 git add -A 
                 git commit -m "testing jenkins"
-                git push https://tchuinsu:$TOKEN@github.com/tchuinsu/s4-pipeline-practise.git  || true
+                git push https://tchuinsu:$TOKEN@github.com/tchuinsu/s4-pipeline-practise.git || true
 	            '''
 	          }
 
