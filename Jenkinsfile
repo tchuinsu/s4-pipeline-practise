@@ -236,8 +236,8 @@ docker push devopseasylearning2021/s4-weather:${BUILD_NUMBER}$WEATHERTag
 	          ]) {
 
 	            sh '''
-                 git config --global user.name "tchuinsu"
-                 git config --global user.email coubis001@gmail.com
+                git config --global user.name "tchuinsu"
+                git config --global user.email coubis001@gmail.com
                 rm -rf s4-pipeline-practise || true
                 git clone  https://tchuinsu:$TOKEN@github.com/tchuinsu/s4-pipeline-practise.git
                 cd s4-pipeline-practise/CHARTS
@@ -359,14 +359,7 @@ EOF
 
 	    }
 
-        stage('wait for argocd') {
-            steps {
-                sh '''
-                ls 
-                pwd
-                '''
-            }
-        }
+        
 
 
         
